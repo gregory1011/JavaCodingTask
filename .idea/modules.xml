@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/JD-6/JD-6.iml" filepath="$PROJECT_DIR$/JD-6/JD-6.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaCodingTask.iml" filepath="$PROJECT_DIR$/JavaCodingTask.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SDET - B29/SDET - B29.iml" filepath="$PROJECT_DIR$/SDET - B29/SDET - B29.iml" />
     </modules>
   </component>
 </project>
