@@ -68,6 +68,9 @@ Please, test your solution here : https://leetcode.com/problems/valid-palindrome
             if(ascii >= 97 && ascii <= 122) {
                 s += chars[i];
             }
+//            else if(ascii <= 97 && ascii >= 122){
+//                String replace = s.replace(""+chars[i], "");
+//            }
         }
 
         // reverse the string and check s.equals(rs)
