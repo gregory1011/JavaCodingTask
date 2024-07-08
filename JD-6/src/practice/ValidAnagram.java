@@ -27,7 +27,15 @@ Please, test your solution here : https://leetcode.com/problems/valid-anagram/
 
     public static void main(String[] args) {
 
-        System.out.println(isAnagram("Hero", "eroh"));
+//        System.out.println(isAnagram("Hero", "eroh"));
+//        System.out.println(isAnagram("Herold", "lderoht"));
+
+        String m = "AAxyzBB";
+        int n= m.length() /2;
+        System.out.println(n);
+        for (int i = 0; i < m.length(); i++) {
+            System.out.println(m.substring(i) + i);
+        }
     }
 
 
@@ -35,6 +43,7 @@ Please, test your solution here : https://leetcode.com/problems/valid-anagram/
 
              s = s.toLowerCase();
              t = t.toLowerCase();
+             if (s.length() != t.length())  return false;
 
             char[] sChar = s.toCharArray();
             Arrays.sort(sChar);
