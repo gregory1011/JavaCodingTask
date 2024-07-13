@@ -31,7 +31,7 @@ strategy
         int[] nums = {16, 4, 4, 3, 11, 5, 15};
         int target = 8;
         System.out.println(Arrays.toString(twoSum(nums, target)));
-//        System.out.println(Arrays.toString(twoSum2(nums, target)));
+        System.out.println(Arrays.toString(twoSum2(nums, target)));
     }
 
 
