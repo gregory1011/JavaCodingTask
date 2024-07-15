@@ -3,7 +3,7 @@ package practice;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.TreeMap;
+
 
 public class TwoSum {
 
@@ -28,12 +28,11 @@ strategy
     public static void main(String[] args) {
 
 
-        int[] nums = {16, 4, 4, 3, 11, 5, 15};
+        int[] nums = {16, 3, 11, 5, 15};
         int target = 8;
         System.out.println(Arrays.toString(twoSum(nums, target)));
         System.out.println(Arrays.toString(twoSum2(nums, target)));
     }
-
 
     public static int[] twoSum(int[] nums, int target) {
 
@@ -58,7 +57,9 @@ strategy
 
 //        int[] nums = {16, 4, 4, 3, 11, 5, 15};
         Map<Integer, Integer> map = new HashMap<>();
+
         for (int i = 0; i < nums.length; i++) {
+
             Integer arrNum = map.get(nums[i]);
             if (arrNum != null) {
                 return new int[]{i, arrNum};

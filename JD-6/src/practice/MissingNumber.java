@@ -34,7 +34,7 @@ Please, test your solution here: https://leetcode.com/problems/missing-number/
 
 
     public static void main(String[] args) {
-        int n= 2;
+        int n= 8;
 //        int[] nums = new int[]{3,0,1};
         int[] nums = new int[]{9, 6, 4, 2, 3, 5, 7, 0, 1};
         System.out.println(missingNumber(nums, n));
@@ -48,13 +48,14 @@ Please, test your solution here: https://leetcode.com/problems/missing-number/
         Arrays.sort(nums);
         int misNum= 0;
 
-        if(n > nums.length){
-            for(int i= 0; i < n; i++){
+        if(n > nums.length) {
+            for (int i = 0; i < n; i++) {
                 if (i != nums[i]) {
-                    misNum= i;
+                    misNum = i;
                 }
             }
-        }else {
+
+                }else {
 
             for(int i= 0; i < nums.length; i++){
                 if (i != nums[i]) {
