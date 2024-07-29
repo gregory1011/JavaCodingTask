@@ -28,34 +28,36 @@ strategy
     public static void main(String[] args) {
 
 
-        int[] nums = {16, 3, 11, 5, 15};
+        int[] num = new int []{16, 3, 11, 5, 15};
         int target = 8;
-        System.out.println(Arrays.toString(twoSum(nums, target)));
-        System.out.println(Arrays.toString(twoSum2(nums, target)));
+
+        System.out.println(Arrays.toString(twoSum(num, target)));
+        System.out.println(Arrays.toString(twoSum2(num, target)));
+        System.out.println(Arrays.toString(twoSum3(num, target)));
+        System.out.println(Arrays.toString(twoSumOptimalSolution(num, target)));
     }
 
     public static int[] twoSum(int[] nums, int target) {
 
-        Arrays.sort(nums);
-
+//        Arrays.sort(nums);
         for (int i : nums) {
-//            if ( nums[i] + nums[i+1] == target ) {
-//                    res[0] = nums[i];
-//                    res[1] = nums[i+1];
-//            }
             for (int j : nums) {
+
                 if (i + j == target && i != j) {
                     return new int[]{i, j};
                 }
+
             }
         }
         return nums;
+
     }
 
 
     public static int[] twoSum2(int[] nums, int target) {
 
 //        int[] nums = {16, 4, 4, 3, 11, 5, 15};
+
         Map<Integer, Integer> map = new HashMap<>();
 
         for (int i = 0; i < nums.length; i++) {
@@ -68,6 +70,40 @@ strategy
         }
         return nums;
     }
+
+
+    public static int[] twoSum3(int[] arr, int target){
+        //{16, 3, 11, 5, 15};
+        // target 8
+        Arrays.sort(arr);
+        Map<Integer, Integer> map= new HashMap<>();
+
+        for(int i= 0; i < arr.length; i++){
+            int n= target - arr[i];
+            if(map.containsKey(n)){
+                return new int []{map.get(n), i};
+            }else {
+                map.put(arr[i], i);
+            }
+        }
+
+        return new int[]{};
+    }
+
+
+    public static int[] twoSumOptimalSolution(int[] array, int targetValue){
+
+        //    {16, 3, 11, 5, 15}
+        Map<Integer,Integer> map=new HashMap<>();
+        for (int i = 0; i <array.length ; i++) {
+            int potentialMatch= targetValue - array[i];
+            if (map.containsKey(potentialMatch)) return new int[] {i,map.get(potentialMatch)};
+            else map.put(array[i], i);
+
+        }
+        return new int[]{};
+    }
+
 
 
 }
