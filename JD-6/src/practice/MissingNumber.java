@@ -37,8 +37,11 @@ Please, test your solution here: https://leetcode.com/problems/missing-number/
         int n= 8;
 //        int[] nums = new int[]{3,0,1};
         int[] nums = new int[]{9, 6, 4, 2, 3, 5, 7, 0, 1};
-        System.out.println(missingNumber(nums, n));
-        System.out.println(missingNumber2(nums));
+        int[] num1 = new int[]{9, 6, 4, 2, 3, 5, 7, 0, 1};
+
+        System.out.println(missingNumber(nums, n)); // time O(n) Space O(1)
+        System.out.println(missingNumber2(nums)); // time O(n) Space O(1)
+        System.out.println(missingNumber3(num1));// time O(n) Space O(0) , no space complexity
 
     }
 
@@ -81,6 +84,16 @@ Please, test your solution here: https://leetcode.com/problems/missing-number/
         return misNum;
     }
 
+    public static int missingNumber3(int[] nums) {
+
+        int n= nums.length;
+        int sum = ((n+1) * n) / 2; // sum =9+1=10*9=90/2= 45
+        //{9, 6, 4, 2, 3, 5, 7, 0, 1} -> 8 is missing
+        for (int i : nums){
+            sum= sum - i;
+        }
+        return sum;
+    }
 
 
 

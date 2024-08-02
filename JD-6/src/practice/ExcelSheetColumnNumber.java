@@ -12,9 +12,6 @@ public class ExcelSheetColumnNumber {
         String str= "ZY";
         System.out.println(titleToNumber(str));
         System.out.println("result= "+titleToNumber2(str));
-
-
-
     }
 
     /*
@@ -42,7 +39,6 @@ columnTitle is in the range ["A", "FXSHRXW"].
 Please, test your solution here: https://leetcode.com/problems/excel-sheet-column-number/
 *
 */
-
 
     public static int titleToNumber(String columnTitle) {
 
