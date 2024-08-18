@@ -1,6 +1,7 @@
 package practice;
 
 import java.util.Arrays;
+import java.util.Stack;
 
 public class MissingNumber {
 
@@ -34,35 +35,39 @@ Please, test your solution here: https://leetcode.com/problems/missing-number/
 
 
     public static void main(String[] args) {
-        int n= 8;
+        int n = 8;
 //        int[] nums = new int[]{3,0,1};
         int[] nums = new int[]{9, 6, 4, 2, 3, 5, 7, 0, 1};
         int[] num1 = new int[]{9, 6, 4, 2, 3, 5, 7, 0, 1};
 
-        System.out.println(missingNumber(nums, n)); // time O(n) Space O(1)
-        System.out.println(missingNumber2(nums)); // time O(n) Space O(1)
-        System.out.println(missingNumber3(num1));// time O(n) Space O(0) , no space complexity
+//        System.out.println(missingNumber(nums, n)); // time O(n) Space O(1)
+//        System.out.println(missingNumber2(nums)); // time O(n) Space O(1)
+//        System.out.println(missingNumber3(num1));// time O(n) Space O(0) , no space complexity
 
+        char[] arr = {'a', 'b', 'c', 'd', 'f'};
+        System.out.println(findMissingLetter(arr));
+
+        char c ='a' +1;
+//        System.out.println(c);
     }
-
 
     public static int missingNumber(int[] nums, int n) {
 
         Arrays.sort(nums);
-        int misNum= 0;
+        int misNum = 0;
 
-        if(n > nums.length) {
+        if (n > nums.length) {
             for (int i = 0; i < n; i++) {
                 if (i != nums[i]) {
                     misNum = i;
                 }
             }
 
-                }else {
+        } else {
 
-            for(int i= 0; i < nums.length; i++){
+            for (int i = 0; i < nums.length; i++) {
                 if (i != nums[i]) {
-                    misNum= i;
+                    misNum = i;
                 }
             }
 
@@ -70,14 +75,13 @@ Please, test your solution here: https://leetcode.com/problems/missing-number/
         return misNum;
     }
 
-
     public static int missingNumber2(int[] nums) {
         Arrays.sort(nums);
-        int misNum= 0;
+        int misNum = 0;
 
-        for(int i= 0; i < nums.length; i++){
-            if(i != nums[i] ){
-                misNum= i;
+        for (int i = 0; i < nums.length; i++) {
+            if (i != nums[i]) {
+                misNum = i;
             }
 
         }
@@ -93,6 +97,22 @@ Please, test your solution here: https://leetcode.com/problems/missing-number/
             sum= sum - i;
         }
         return sum;
+    }
+
+    public static char findMissingLetter(char[] array) {
+
+        if(array==null) return ' ';
+
+        for (int i = 0; i < array.length; i++) {
+            for (int j = i+1; j < array.length; j++) {
+                if ( (int)(array[i]) +1 != array[j]){
+                    return (char) (array[i]+1);
+                }
+            }
+        }
+
+
+        return ' ';
     }
 
 
