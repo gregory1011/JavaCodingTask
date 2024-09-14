@@ -1,6 +1,7 @@
 package jd;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class PlusOne {
 
@@ -8,6 +9,7 @@ public class PlusOne {
     public static void main(String[] args) {
         int[] arr= {1,2,3, 9};
         System.out.println(Arrays.toString(plusOne(arr)));
+        List<Integer> list= Arrays.asList(1,2,3);
 
     }
 /*
