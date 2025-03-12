@@ -39,7 +39,9 @@ public class Student {
         return id == student.id && Objects.equals(name, student.name);
     }
 
-    // why we need to implement the hashCode:
+    // if we ever work with hashTable, hashSet or hashMap, then we need to override hashCode method!
+    // why we need to implement the hashCode: because of Set data structure to make sure duplicates are not allowed!
+   // if we don't override the hashCode method then the Student objects stored in Set can have duplicates!
     @Override
     public int hashCode() {
         int result = id;
