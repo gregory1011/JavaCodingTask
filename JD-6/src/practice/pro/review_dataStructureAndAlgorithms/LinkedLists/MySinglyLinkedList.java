@@ -5,6 +5,7 @@ public class MySinglyLinkedList {
     Node head;
     Node tail;
     int size;
+
     boolean isEmpty() {
          return (head == null);
     }
@@ -54,6 +55,19 @@ public class MySinglyLinkedList {
             current= current.next;
         }
 
+    }
+
+    int indexOf(int data){
+        if (isEmpty()) return -1;
+        int pos= 0;
+        // iterate through the list
+        Node current= head;  // set my current with the starting element
+        while(current!=null){
+            if (current.id==data) return pos;
+            pos++;
+            current= current.next;
+        }
+        return -1;
     }
 
 
