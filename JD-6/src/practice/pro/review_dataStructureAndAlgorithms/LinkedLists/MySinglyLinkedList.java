@@ -83,17 +83,51 @@ public class MySinglyLinkedList {
     int getKthItemFromLast(int k) {
         Node node1= head;
         Node node2= head;
-        // move node2 k-1 times or we can start i= 1;
+        // move node2 k-1 times, or we can start i= 1;
         for (int i= 0; i < (k-1); i++) {
             node2= node2.next;
         }
         //move both pointers until node2 hits the last element
-        while(node2!=null){
+        while(node2.next!=null){
             node1= node1.next;
             node2= node2.next;
         }
         // node1 is on the kth element from the last.
         return node1.id;
+    }
+
+    void removeKthItemFromLast(int k) {
+        Node node1= head;
+        Node node2= head;
+        Node prev= null; // or head
+        // move node2 k-1 times, or we can start i= 1;
+        for (int i= 0; i < (k-1); i++) {
+            node2= node2.next;
+        }
+        //move both pointers until node2 hits the last element
+        while(node2.next!=null){
+            prev= node1;
+            node1= node1.next;
+            node2= node2.next;
+        }
+        // node1 is on the kth element from the last.
+        // do delete operation
+        if (node1==head){
+            head= node1.next;
+            node1.next= null;
+            size--;
+        }
+        else if (node1==tail) {
+            tail= prev;
+            prev.next = null;
+            size--;
+        }
+        else {
+            prev.next = node1.next;
+            node1.next= null;
+            size--;
+        }
+
     }
 
 
