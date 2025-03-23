@@ -70,5 +70,32 @@ public class MySinglyLinkedList {
         return -1;
     }
 
+    void addFirst(int data) {
+        Node node = new Node(data);
+        if (isEmpty()) head= tail= node;
+        else {
+            node.next= head;
+            head= node;
+        }
+        size++;
+    }
+
+    int getKthItemFromLast(int k) {
+        Node node1= head;
+        Node node2= head;
+        // move node2 k-1 times or we can start i= 1;
+        for (int i= 0; i < (k-1); i++) {
+            node2= node2.next;
+        }
+        //move both pointers until node2 hits the last element
+        while(node2!=null){
+            node1= node1.next;
+            node2= node2.next;
+        }
+        // node1 is on the kth element from the last.
+        return node1.id;
+    }
+
+
 
 }
