@@ -14,7 +14,7 @@ public class MapReview {
         map.put(2, "Julia");
         map.put(3, "Frank");
 
-        String str= "JJavav";
+        String str= "Javav";
         System.out.println("findFirsNonRepeatedChar = " + findFirsNonRepeatedChar(str));
     }
 
