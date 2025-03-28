@@ -1,6 +1,8 @@
 package practice.pro;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class SumOfTwoNumbers {
 
@@ -9,8 +11,10 @@ public class SumOfTwoNumbers {
         int[] arr1 = {1,3,9,7,3,2,4,5};
         int r= 9;
         int[] i = sumOfTwoNumbers(arr1, r);
+        int[] is = sumOfTwoNumbers(arr1, r);
 
         System.out.println("index of "+ Arrays.toString(i));
+        System.out.println("index of "+ Arrays.toString(is));
 
 //        ------------------------
         int[] m= {1,2,3,4,5,6,7,8,9};
@@ -30,6 +34,16 @@ public class SumOfTwoNumbers {
             }
         }
         return new int[]{0,0};
+    }
+
+    // this optimal solution with Time complexity O(n) and Space complexity O(n)
+    private static int[] sumOfTwoNumber(int[] arr, int target) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < arr.length; i++) {
+            if(map.containsKey(target-arr[i])) return new int[]{i, map.get( target-arr[i]), i};
+            map.put(arr[i], i); // put for map key= array value, and key value= array index
+        }
+        return new int[]{};
     }
 
 
