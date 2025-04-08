@@ -130,6 +130,18 @@ public class MySinglyLinkedList {
 
     }
 
+    int indexOF(int id){
+        Node current= head;
+        int pos= 0;
+        while(current!=null){
+            if (current.id==id) return pos;
+            else{
+                current= current.next;
+                pos++;
+            }
+        }
+        return -1;
+    }
 
 
 }
